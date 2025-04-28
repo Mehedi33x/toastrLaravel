@@ -30,9 +30,8 @@ class PostController extends Controller
         ]);
 
         Post::create($request->all());
-        // return redirect()->route('posts.index')->with('success', 'Post created successfully.');
-        ToastMagic::success('Team added successfully!');
-        return redirect()->route('posts.index');
+        ToastMagic::success('Post created successfully');
+        return to_route('posts.index');
     }
 
     public function show(Post $post)
@@ -53,12 +52,14 @@ class PostController extends Controller
         ]);
 
         $post->update($request->all());
-        return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
+        ToastMagic::success('Post updated successfully');
+        return to_route('posts.index');
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
-        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
+        ToastMagic::success('Post deleted successfully');
+        return to_route('posts.index');
     }
 }
