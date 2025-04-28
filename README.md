@@ -38,4 +38,8 @@ const toast = new ToastMagic();
 
 // Show a success toast
 toast.success("Success!", "Your data has been saved!");
+
+
+![Sample](public/images/Screenshot_4.png)
+
 Developed by @devrabiul
